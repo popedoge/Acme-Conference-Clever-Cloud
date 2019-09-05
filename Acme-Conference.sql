@@ -1,5 +1,24 @@
-CREATE DATABASE  IF NOT EXISTS `acme-conference` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `acme-conference`;
+drop database if exists `acme-conference`;
+create database `acme-conference`;
+use `acme-conference`;
+
+-- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
+--
+-- Host: localhost    Database: acme-conference
+-- ------------------------------------------------------
+-- Server version	8.0.12
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+ SET NAMES utf8 ;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
 --
 -- Table structure for table `activity`
 --
@@ -58,7 +77,7 @@ CREATE TABLE `actor_preferences` (
 
 LOCK TABLES `actor_preferences` WRITE;
 /*!40000 ALTER TABLE `actor_preferences` DISABLE KEYS */;
-INSERT INTO `actor_preferences` VALUES (159,0,_binary '\0',_binary '',_binary '\0',_binary '\0','- ADMIN',151),(160,0,_binary '',_binary '',_binary '',_binary '','',152),(161,0,_binary '',_binary '',_binary '',_binary '','',153),(162,0,_binary '\0',_binary '',_binary '\0',_binary '','',154),(163,0,_binary '\0',_binary '',_binary '\0',_binary '','',155),(164,0,_binary '\0',_binary '',_binary '\0',_binary '','',156),(165,0,_binary '\0',_binary '',_binary '\0',_binary '','',157);
+INSERT INTO `actor_preferences` VALUES (184,0,_binary '\0',_binary '',_binary '\0',_binary '\0','- ADMIN',175),(185,0,_binary '',_binary '',_binary '',_binary '','',177),(186,0,_binary '',_binary '',_binary '',_binary '','',178),(187,0,_binary '\0',_binary '',_binary '\0',_binary '','',179),(188,0,_binary '\0',_binary '',_binary '\0',_binary '','',180),(189,0,_binary '\0',_binary '',_binary '\0',_binary '','',181),(190,0,_binary '\0',_binary '',_binary '\0',_binary '','',182),(191,0,_binary '\0',_binary '',_binary '\0',_binary '','',176);
 /*!40000 ALTER TABLE `actor_preferences` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -92,7 +111,7 @@ CREATE TABLE `administrator` (
 
 LOCK TABLES `administrator` WRITE;
 /*!40000 ALTER TABLE `administrator` DISABLE KEYS */;
-INSERT INTO `administrator` VALUES (151,0,'Admin address 1','admin11@mail.com','Pepe','Paco','666666666','https://media.tenor.com/images/c094a7e701671534e78d802cc91b40b3/tenor.gif','Lopez',144);
+INSERT INTO `administrator` VALUES (175,0,'Admin address 1','admin11@mail.com','Pepe','Paco','666666666','https://media.tenor.com/images/c094a7e701671534e78d802cc91b40b3/tenor.gif','Lopez',167),(176,0,'i didnt want to have to create this bean grrr','admin11@mail.com','Admin','Wuango','666666666','https://media.tenor.com/images/c094a7e701671534e78d802cc91b40b3/tenor.gif','Lopez',174);
 /*!40000 ALTER TABLE `administrator` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -126,7 +145,7 @@ CREATE TABLE `author` (
 
 LOCK TABLES `author` WRITE;
 /*!40000 ALTER TABLE `author` DISABLE KEYS */;
-INSERT INTO `author` VALUES (152,0,'Address 1','author1@mail.com',NULL,'Onesimo','666666666','https://media.tenor.com/images/c094a7e701671534e78d802cc91b40b3/tenor.gif','Guayabato',145),(153,0,'Address 2','author2@mail.com','Perro','Mano','666666666','https://media.tenor.com/images/c094a7e701671534e78d802cc91b40b3/tenor.gif','Critter',146),(154,0,'Address 3','author3@mail.com','RR','Jorgito','666666666','https://media.tenor.com/images/c094a7e701671534e78d802cc91b40b3/tenor.gif','Martin',147);
+INSERT INTO `author` VALUES (177,0,'Address 1','author1@mail.com',NULL,'Onesimo','666666666','https://media.tenor.com/images/c094a7e701671534e78d802cc91b40b3/tenor.gif','Guayabato',168),(178,0,'Address 2','author2@mail.com','Perro','Mano','666666666','https://media.tenor.com/images/c094a7e701671534e78d802cc91b40b3/tenor.gif','Critter',169),(179,0,'Address 3','author3@mail.com','RR','Jorgito','666666666','https://media.tenor.com/images/c094a7e701671534e78d802cc91b40b3/tenor.gif','Martin',170);
 /*!40000 ALTER TABLE `author` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,7 +162,7 @@ CREATE TABLE `conference` (
   `acronym` varchar(255) DEFAULT NULL,
   `cameradl` datetime DEFAULT NULL,
   `end_date` datetime DEFAULT NULL,
-  `fee` int(11) DEFAULT NULL,
+  `fee` bigint(20) DEFAULT NULL,
   `locked` bit(1) NOT NULL,
   `notificationdl` datetime DEFAULT NULL,
   `start_date` datetime DEFAULT NULL,
@@ -162,7 +181,7 @@ CREATE TABLE `conference` (
 
 LOCK TABLES `conference` WRITE;
 /*!40000 ALTER TABLE `conference` DISABLE KEYS */;
-INSERT INTO `conference` VALUES (216,1,'DC','2020-03-12 13:20:00','2020-03-12 13:20:00',144,_binary '\0','2020-03-12 13:20:00','2020-03-12 13:20:00','2020-03-12 13:20:00','woof woof','DOGECON','Bush Stadium',151),(217,1,'CVSB','2020-03-12 13:20:00','2020-03-12 13:20:00',100,_binary '','2020-03-12 13:20:00','2020-03-12 13:20:00','2020-03-12 13:20:00','*sluuuuuuuuuuuuuuuuurp*','conke vs bepis: ultimate battle','Bush Stadium',151);
+INSERT INTO `conference` VALUES (248,0,'DC','2020-03-12 13:20:00','2020-03-12 13:20:00',100,_binary '\0','2020-03-12 13:20:00','2020-03-12 13:20:00','2020-03-12 13:20:00','woof woof','DOGECON','Bush Stadium',175),(249,0,'CVSB','2020-03-12 13:20:00','2020-03-12 13:20:00',100,_binary '\0','2020-03-12 13:20:00','2020-03-12 13:20:00','2020-03-12 13:20:00','*sluuuuuuuuuuuuuuuuurp*','conke vs bepis: ultimate battle','Bush Stadium',176),(250,0,'HBC','2020-03-12 13:20:00','2020-03-12 13:20:00',12,_binary '\0','2020-03-12 13:20:00','2020-03-12 13:20:00','2020-03-12 13:20:00','*buuuuuuuuuuuuuuuuurp*','hillbill convention','Bush Stadium',175);
 /*!40000 ALTER TABLE `conference` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -210,8 +229,40 @@ CREATE TABLE `hibernate_sequences` (
 
 LOCK TABLES `hibernate_sequences` WRITE;
 /*!40000 ALTER TABLE `hibernate_sequences` DISABLE KEYS */;
-INSERT INTO `hibernate_sequences` VALUES ('domain_entity',2);
+INSERT INTO `hibernate_sequences` VALUES ('domain_entity',1);
 /*!40000 ALTER TABLE `hibernate_sequences` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lorem`
+--
+
+DROP TABLE IF EXISTS `lorem`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `lorem` (
+  `id` int(11) NOT NULL,
+  `version` int(11) NOT NULL,
+  `body` varchar(255) DEFAULT NULL,
+  `locked` bit(1) DEFAULT NULL,
+  `picture` varchar(255) DEFAULT NULL,
+  `publication_moment` datetime DEFAULT NULL,
+  `ticker` varchar(255) DEFAULT NULL,
+  `reference` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_nf8tagl7ddncvs1ypwpq3vylx` (`reference`),
+  CONSTRAINT `FK_nf8tagl7ddncvs1ypwpq3vylx` FOREIGN KEY (`reference`) REFERENCES `conference` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lorem`
+--
+
+LOCK TABLES `lorem` WRITE;
+/*!40000 ALTER TABLE `lorem` DISABLE KEYS */;
+INSERT INTO `lorem` VALUES (254,1,'this a test2',_binary '\0','https://i.kinja-img.com/gawker-media/image/upload/s--CAjFHOYm--/c_scale,f_auto,fl_progressive,q_80,w_800/19crhbdp4sanejpg.jpg','2019-08-22 13:20:00','QQQ-123456-WW',248),(255,0,'this a test',_binary '\0','https://i.kinja-img.com/gawker-media/image/upload/s--CAjFHOYm--/c_scale,f_auto,fl_progressive,q_80,w_800/19crhbdp4sanejpg.jpg','2019-07-22 13:20:00','QWE-123456-FF',248),(256,1,'this a test',_binary '','https://i.kinja-img.com/gawker-media/image/upload/s--CAjFHOYm--/c_scale,f_auto,fl_progressive,q_80,w_800/19crhbdp4sanejpg.jpg','2019-06-22 13:20:00','NEE-123456-ET',249),(257,1,'this a test',_binary '','https://i.kinja-img.com/gawker-media/image/upload/s--CAjFHOYm--/c_scale,f_auto,fl_progressive,q_80,w_800/19crhbdp4sanejpg.jpg','2019-07-22 13:20:00','OKT-123456-EP',249);
+/*!40000 ALTER TABLE `lorem` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -243,7 +294,7 @@ CREATE TABLE `message` (
 
 LOCK TABLES `message` WRITE;
 /*!40000 ALTER TABLE `message` DISABLE KEYS */;
-INSERT INTO `message` VALUES (221,0,'vro wat','2019-03-12 13:20:00','','notif test',_binary '\0',NULL,208);
+INSERT INTO `message` VALUES (258,0,'vro wat','2019-03-12 13:20:00','','notif test',_binary '\0',NULL,240);
 /*!40000 ALTER TABLE `message` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -273,7 +324,7 @@ CREATE TABLE `message_box` (
 
 LOCK TABLES `message_box` WRITE;
 /*!40000 ALTER TABLE `message_box` DISABLE KEYS */;
-INSERT INTO `message_box` VALUES (166,0,'ROOT','Mail',151,NULL),(167,0,'INBOX','Inbox',151,166),(168,0,'OUTBOX','Outbox',151,166),(169,0,'TRASHBOX','Trashbox',151,166),(170,0,'SPAMBOX','Spambox',151,166),(171,0,'NOTIF','Spambox',151,166),(172,0,'ROOT','Mail',152,NULL),(173,0,'INBOX','Inbox',152,172),(174,0,'OUTBOX','Outbox',152,172),(175,0,'TRASHBOX','Trashbox',152,172),(176,0,'SPAMBOX','Spambox',152,172),(177,0,'NOTIF','Spambox',152,172),(178,0,'ROOT','Mail',153,NULL),(179,0,'INBOX','Inbox',153,178),(180,0,'OUTBOX','Outbox',153,178),(181,0,'TRASHBOX','Trashbox',153,178),(182,0,'SPAMBOX','Spambox',153,178),(183,0,'NOTIF','Spambox',153,178),(184,0,'ROOT','Mail',154,NULL),(185,0,'INBOX','Inbox',154,184),(186,0,'OUTBOX','Outbox',154,184),(187,0,'TRASHBOX','Trashbox',154,184),(188,0,'SPAMBOX','Spambox',154,184),(189,0,'NOTIF','Spambox',154,184),(190,0,'ROOT','Mail',155,NULL),(191,0,'INBOX','Inbox',155,190),(192,0,'OUTBOX','Outbox',155,190),(193,0,'TRASHBOX','Trashbox',155,190),(194,0,'SPAMBOX','Spambox',155,190),(195,0,'NOTIF','Spambox',155,190),(196,0,'ROOT','Mail',156,NULL),(197,0,'INBOX','Inbox',156,196),(198,0,'OUTBOX','Outbox',156,196),(199,0,'TRASHBOX','Trashbox',156,196),(200,0,'SPAMBOX','Spambox',156,196),(201,0,'NOTIF','Spambox',156,196),(202,0,'ROOT','Mail',157,NULL),(203,0,'INBOX','Inbox',157,202),(204,0,'OUTBOX','Outbox',157,202),(205,0,'TRASHBOX','Trashbox',157,202),(206,0,'SPAMBOX','Spambox',157,202),(207,0,'NOTIF','Spambox',157,202);
+INSERT INTO `message_box` VALUES (192,0,'ROOT','Mail',175,NULL),(193,0,'INBOX','Inbox',175,192),(194,0,'OUTBOX','Outbox',175,192),(195,0,'TRASHBOX','Trashbox',175,192),(196,0,'SPAMBOX','Spambox',175,192),(197,0,'NOTIF','Spambox',175,192),(198,0,'ROOT','Mail',176,NULL),(199,0,'INBOX','Inbox',176,198),(200,0,'OUTBOX','Outbox',176,198),(201,0,'TRASHBOX','Trashbox',176,198),(202,0,'SPAMBOX','Spambox',176,198),(203,0,'NOTIF','Spambox',176,198),(204,0,'ROOT','Mail',177,NULL),(205,0,'INBOX','Inbox',177,204),(206,0,'OUTBOX','Outbox',177,204),(207,0,'TRASHBOX','Trashbox',177,204),(208,0,'SPAMBOX','Spambox',177,204),(209,0,'NOTIF','Spambox',177,204),(210,0,'ROOT','Mail',178,NULL),(211,0,'INBOX','Inbox',178,210),(212,0,'OUTBOX','Outbox',178,210),(213,0,'TRASHBOX','Trashbox',178,210),(214,0,'SPAMBOX','Spambox',178,210),(215,0,'NOTIF','Spambox',178,210),(216,0,'ROOT','Mail',179,NULL),(217,0,'INBOX','Inbox',179,216),(218,0,'OUTBOX','Outbox',179,216),(219,0,'TRASHBOX','Trashbox',179,216),(220,0,'SPAMBOX','Spambox',179,216),(221,0,'NOTIF','Spambox',179,216),(222,0,'ROOT','Mail',180,NULL),(223,0,'INBOX','Inbox',180,222),(224,0,'OUTBOX','Outbox',180,222),(225,0,'TRASHBOX','Trashbox',180,222),(226,0,'SPAMBOX','Spambox',180,222),(227,0,'NOTIF','Spambox',180,222),(228,0,'ROOT','Mail',181,NULL),(229,0,'INBOX','Inbox',181,228),(230,0,'OUTBOX','Outbox',181,228),(231,0,'TRASHBOX','Trashbox',181,228),(232,0,'SPAMBOX','Spambox',181,228),(233,0,'NOTIF','Spambox',181,228),(234,0,'ROOT','Mail',182,NULL),(235,0,'INBOX','Inbox',182,234),(236,0,'OUTBOX','Outbox',182,234),(237,0,'TRASHBOX','Trashbox',182,234),(238,0,'SPAMBOX','Spambox',182,234),(239,0,'NOTIF','Spambox',182,234);
 /*!40000 ALTER TABLE `message_box` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -300,7 +351,7 @@ CREATE TABLE `message_container` (
 
 LOCK TABLES `message_container` WRITE;
 /*!40000 ALTER TABLE `message_container` DISABLE KEYS */;
-INSERT INTO `message_container` VALUES (221,171);
+INSERT INTO `message_container` VALUES (258,197);
 /*!40000 ALTER TABLE `message_container` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -357,7 +408,6 @@ CREATE TABLE `panel` (
 
 LOCK TABLES `panel` WRITE;
 /*!40000 ALTER TABLE `panel` DISABLE KEYS */;
-INSERT INTO `panel` VALUES (32768,0,'2019-09-23 22:50:00','tesag','qweta','2019-09-23 05:45:00','asdf','PANEL TEST',216);
 /*!40000 ALTER TABLE `panel` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -386,7 +436,7 @@ CREATE TABLE `paper` (
 
 LOCK TABLES `paper` WRITE;
 /*!40000 ALTER TABLE `paper` DISABLE KEYS */;
-INSERT INTO `paper` VALUES (219,0,'http://www.google.com','Manoperros y Meji',_binary '\0','Se murio la yoni','La Yoni'),(220,0,'http://www.google.com','Doggie McDoge',_binary '\0','The frog ate the shark','The Frog and the Shark');
+INSERT INTO `paper` VALUES (252,0,'http://www.google.com','Manoperros y Meji',_binary '\0','Se murio la yoni','La Yoni'),(253,0,'http://www.google.com','Doggie McDoge',_binary '\0','The frog ate the shark','The Frog and the Shark');
 /*!40000 ALTER TABLE `paper` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -422,7 +472,6 @@ CREATE TABLE `presentation` (
 
 LOCK TABLES `presentation` WRITE;
 /*!40000 ALTER TABLE `presentation` DISABLE KEYS */;
-INSERT INTO `presentation` VALUES (32769,0,'2019-09-23 23:45:00','tesag','qweta','2019-09-23 22:25:00','asdf','PRESENTATION TEST',216,218);
 /*!40000 ALTER TABLE `presentation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -522,7 +571,7 @@ CREATE TABLE `reviewer` (
 
 LOCK TABLES `reviewer` WRITE;
 /*!40000 ALTER TABLE `reviewer` DISABLE KEYS */;
-INSERT INTO `reviewer` VALUES (155,0,'Address 3','reviewer1@mail.com','oo','moo','666666666','https://media.tenor.com/images/c094a7e701671534e78d802cc91b40b3/tenor.gif','oot',148,'woof'),(156,0,'Address 3','reviewer2@mail.com','Doesit','He','666666666','https://media.tenor.com/images/c094a7e701671534e78d802cc91b40b3/tenor.gif','Ferfree',149,'cleanup'),(157,0,'Address 3','reviewer2@mail.com',NULL,'Yanis','666666666','https://media.tenor.com/images/c094a7e701671534e78d802cc91b40b3/tenor.gif','Varoufakis',150,'destruction');
+INSERT INTO `reviewer` VALUES (180,0,'Address 3','reviewer1@mail.com','oo','moo','666666666','https://media.tenor.com/images/c094a7e701671534e78d802cc91b40b3/tenor.gif','oot',171,'woof'),(181,0,'Address 3','reviewer2@mail.com','Doesit','He','666666666','https://media.tenor.com/images/c094a7e701671534e78d802cc91b40b3/tenor.gif','Ferfree',172,'cleanup'),(182,0,'Address 3','reviewer2@mail.com',NULL,'Yanis','666666666','https://media.tenor.com/images/c094a7e701671534e78d802cc91b40b3/tenor.gif','Varoufakis',173,'destruction');
 /*!40000 ALTER TABLE `reviewer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -576,7 +625,7 @@ CREATE TABLE `site_config` (
 
 LOCK TABLES `site_config` WRITE;
 /*!40000 ALTER TABLE `site_config` DISABLE KEYS */;
-INSERT INTO `site_config` VALUES (158,0,'https://media.tenor.com/images/c094a7e701671534e78d802cc91b40b3/tenor.gif',34,'Acme Conference','Welcome vro...');
+INSERT INTO `site_config` VALUES (183,0,'https://i.ibb.co/GVpZCtM/acme-conference.png',34,'Acme Conference','Welcome vro...');
 /*!40000 ALTER TABLE `site_config` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -602,7 +651,7 @@ CREATE TABLE `social_network` (
 
 LOCK TABLES `social_network` WRITE;
 /*!40000 ALTER TABLE `social_network` DISABLE KEYS */;
-INSERT INTO `social_network` VALUES (213,0,'https://image.flaticon.com/icons/png/512/33/33702.png','Facebook'),(214,0,'https://image.flaticon.com/icons/png/512/25/25684.png','VK');
+INSERT INTO `social_network` VALUES (245,0,'https://image.flaticon.com/icons/png/512/33/33702.png','Facebook'),(246,0,'https://image.flaticon.com/icons/png/512/25/25684.png','VK');
 /*!40000 ALTER TABLE `social_network` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -631,7 +680,7 @@ CREATE TABLE `social_profile` (
 
 LOCK TABLES `social_profile` WRITE;
 /*!40000 ALTER TABLE `social_profile` DISABLE KEYS */;
-INSERT INTO `social_profile` VALUES (215,0,'http://slither.io/',213,151);
+INSERT INTO `social_profile` VALUES (247,0,'http://slither.io/',245,175);
 /*!40000 ALTER TABLE `social_profile` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -667,7 +716,7 @@ CREATE TABLE `submission` (
 
 LOCK TABLES `submission` WRITE;
 /*!40000 ALTER TABLE `submission` DISABLE KEYS */;
-INSERT INTO `submission` VALUES (218,0,'submission.pending','ABC-1234',219,216,152,220);
+INSERT INTO `submission` VALUES (251,0,'submission.pending','ABC-1234',252,248,177,253);
 /*!40000 ALTER TABLE `submission` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -694,7 +743,7 @@ CREATE TABLE `submission_reviewers` (
 
 LOCK TABLES `submission_reviewers` WRITE;
 /*!40000 ALTER TABLE `submission_reviewers` DISABLE KEYS */;
-INSERT INTO `submission_reviewers` VALUES (218,156);
+INSERT INTO `submission_reviewers` VALUES (251,181);
 /*!40000 ALTER TABLE `submission_reviewers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -721,7 +770,7 @@ CREATE TABLE `topic` (
 
 LOCK TABLES `topic` WRITE;
 /*!40000 ALTER TABLE `topic` DISABLE KEYS */;
-INSERT INTO `topic` VALUES (208,0,'INVESTIGACION','INQUIRY'),(209,0,'REFUTACION','REBUTTAL'),(210,0,'REGISTRO','REGISTRATION'),(211,0,'TEMAS','TOPICS'),(212,0,'OTRO','OTHER');
+INSERT INTO `topic` VALUES (240,0,'INVESTIGACION','INQUIRY'),(241,0,'REFUTACION','REBUTTAL'),(242,0,'REGISTRO','REGISTRATION'),(243,0,'TEMAS','TOPICS'),(244,0,'OTRO','OTHER');
 /*!40000 ALTER TABLE `topic` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -754,7 +803,6 @@ CREATE TABLE `tutorial` (
 
 LOCK TABLES `tutorial` WRITE;
 /*!40000 ALTER TABLE `tutorial` DISABLE KEYS */;
-INSERT INTO `tutorial` VALUES (32770,0,'2019-09-24 13:25:00','tesag','qweta','2019-09-24 05:25:00','asdf','TUTORIAL TEST',216);
 /*!40000 ALTER TABLE `tutorial` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -807,7 +855,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (144,0,'5d93ceb70e2bf5daa84ec3d0cd2c731a','admin1'),(145,0,'5d93ceb70e2bf5daa84ec3d0cd2c731a','author1'),(146,0,'5d93ceb70e2bf5daa84ec3d0cd2c731a','author2'),(147,0,'5d93ceb70e2bf5daa84ec3d0cd2c731a','author3'),(148,0,'5d93ceb70e2bf5daa84ec3d0cd2c731a','reviewer1'),(149,0,'5d93ceb70e2bf5daa84ec3d0cd2c731a','reviewer2'),(150,0,'5d93ceb70e2bf5daa84ec3d0cd2c731a','reviewer3');
+INSERT INTO `user` VALUES (167,0,'5d93ceb70e2bf5daa84ec3d0cd2c731a','admin1'),(168,0,'5d93ceb70e2bf5daa84ec3d0cd2c731a','author1'),(169,0,'5d93ceb70e2bf5daa84ec3d0cd2c731a','author2'),(170,0,'5d93ceb70e2bf5daa84ec3d0cd2c731a','author3'),(171,0,'5d93ceb70e2bf5daa84ec3d0cd2c731a','reviewer1'),(172,0,'5d93ceb70e2bf5daa84ec3d0cd2c731a','reviewer2'),(173,0,'5d93ceb70e2bf5daa84ec3d0cd2c731a','reviewer3'),(174,0,'5d93ceb70e2bf5daa84ec3d0cd2c731a','admin2');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -832,7 +880,7 @@ CREATE TABLE `user_authorities` (
 
 LOCK TABLES `user_authorities` WRITE;
 /*!40000 ALTER TABLE `user_authorities` DISABLE KEYS */;
-INSERT INTO `user_authorities` VALUES (144,'ADMIN'),(145,'AUTHOR'),(146,'AUTHOR'),(147,'AUTHOR'),(148,'REVIEWER'),(149,'REVIEWER'),(150,'REVIEWER');
+INSERT INTO `user_authorities` VALUES (167,'ADMIN'),(168,'AUTHOR'),(169,'AUTHOR'),(170,'AUTHOR'),(171,'REVIEWER'),(172,'REVIEWER'),(173,'REVIEWER'),(174,'REVIEWER');
 /*!40000 ALTER TABLE `user_authorities` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -845,4 +893,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-09-04 20:52:43
+-- Dump completed on 2019-09-05 11:07:57
